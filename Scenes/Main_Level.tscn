@@ -13,6 +13,8 @@ script/source = "extends Sprite\n\nfunc _ready():\n\tset_process_input(true)\n\t
 
 [node name="Node2D" type="Node2D"]
 
+transform/pos = Vector2( -147.475, -35.1134 )
+
 [node name="Label" type="Label" parent="."]
 
 focus/ignore_mouse = true
@@ -30,23 +32,22 @@ max_lines_visible = -1
 
 [node name="Player" parent="." groups=[ "player" ] instance=ExtResource( 1 )]
 
-
 transform/pos = Vector2( 265.833, -113.604 )
 
 [node name="Terrain" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 252.2, 365.804 )
-transform/rot = 138.698
+transform/rot = 157.928
 
 [node name="Terrain1" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 964.523, 392.682 )
+transform/pos = Vector2( 1062.84, 315.432 )
 transform/rot = 10.2509
 
 [node name="Terrain2" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 590.739, 464.537 )
-transform/rot = -23.3579
+transform/pos = Vector2( 682.034, 387.287 )
+transform/rot = -14.5339
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
@@ -70,7 +71,7 @@ stream/buffering_ms = 500
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1071.93, -140.125 )
+transform/pos = Vector2( 753.571, 246.234 )
 
 [node name="ChargeSpeech" type="Sprite" parent="."]
 
