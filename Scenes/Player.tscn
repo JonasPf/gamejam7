@@ -38,10 +38,10 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 0
-mass = 1.0
+mass = 5.0
 friction = 0.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 10.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 1
@@ -67,26 +67,6 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-<<<<<<< HEAD
-[node name="Camera2D" type="Camera2D" parent="."]
-
-anchor_mode = 1
-rotating = false
-current = true
-zoom = Vector2( 1, 1 )
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-drag_margin/h_enabled = true
-drag_margin/v_enabled = true
-smoothing/enable = false
-smoothing/speed = 5.0
-drag_margin/left = 0.2
-drag_margin/top = 0.2
-drag_margin/right = 0.2
-drag_margin/bottom = 0.2
-
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
@@ -104,5 +84,32 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
->>>>>>> origin/master
+[node name="Feet" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, 35 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Left" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( -35, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Right" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 35, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Up" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, -35 )
+layer_mask = 1
+type_mask = 15
+
 

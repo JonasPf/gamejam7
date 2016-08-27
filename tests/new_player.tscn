@@ -28,7 +28,6 @@ points = Vector2Array( 391.453, 92.9263, 788.403, 77.4894, 795.018, 139.237, 35.
 [node name="Player" type="RigidBody2D" parent="."]
 
 transform/pos = Vector2( 42.1046, 93.2841 )
-transform/scale = Vector2( 1, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3.25875, 0, 0, 3.17379, -0.504306, -0.0604842 )
@@ -195,7 +194,6 @@ __meta__ = { "_edit_lock_":true }
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground3"]
 
 transform/pos = Vector2( -127.263, 80.3819 )
-transform/scale = Vector2( 1, 1 )
 build_mode = 0
 polygon = Vector2Array( 391.453, 92.9263, 788.403, 77.4894, 795.018, 139.237, 35.8444, 149.528 )
 shape_range = Vector2( 0, 0 )
