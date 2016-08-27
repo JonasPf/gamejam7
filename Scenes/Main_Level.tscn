@@ -32,14 +32,14 @@ transform/pos = Vector2( 265.833, -113.604 )
 transform/pos = Vector2( 252.2, 365.804 )
 transform/rot = 138.698
 
-[node name="Terrain1" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
+[node name="Terrain1" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 954.27, 368.076 )
+transform/pos = Vector2( 964.523, 392.682 )
 transform/rot = 10.2509
 
-[node name="Terrain2" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
+[node name="Terrain2" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 590.739, 422.606 )
+transform/pos = Vector2( 590.739, 464.537 )
 transform/rot = -23.3579
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
@@ -64,6 +64,6 @@ stream/buffering_ms = 500
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 836.122, 329.45 )
+transform/pos = Vector2( 1071.93, -140.125 )
 
 

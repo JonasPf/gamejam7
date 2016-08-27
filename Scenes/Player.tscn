@@ -19,7 +19,6 @@
 [ext_resource path="res://Art/GUI/title.png" type="Texture" id=17]
 [ext_resource path="res://Art/GUI/controls_instructions.png" type="Texture" id=18]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -737,7 +736,7 @@ tracks/1/keys = { "times":FloatArray( 2 ), "transitions":FloatArray( 1 ), "value
 transform/pos = Vector2( 10.2744, 69.8746 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 3.22071, 0, 0, 2.9547, 2.2765, -0.0736427 )
+shapes/0/transform = Matrix32( 7.74674, 0, 0, 5.88074, 6.53157, 29.0951 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -835,8 +834,8 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 2.2765, -0.0736427 )
-transform/scale = Vector2( 3.22071, 2.9547 )
+transform/pos = Vector2( 6.53157, 29.0951 )
+transform/scale = Vector2( 7.74674, 5.88074 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -874,6 +873,8 @@ type_mask = 15
 
 [node name="Right" type="RayCast2D" parent="."]
 
+transform/pos = Vector2( 142.324, 6.02936 )
+transform/scale = Vector2( 2.24453, 1 )
 enabled = true
 cast_to = Vector2( 35, 0 )
 layer_mask = 1

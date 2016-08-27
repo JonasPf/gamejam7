@@ -47,6 +47,7 @@ func start_game():
 func detect_collision():
 	if detect_right.is_colliding() || detect_left.is_colliding() || detect_up.is_colliding():
 		var obj = detect_right.get_collider()
+		
 		if obj.is_in_group("enemies"):
 			if charging:
 				obj.set_hit()
