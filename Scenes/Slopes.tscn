@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://Art/Terrain/slope1.png" type="Texture" id=1]
+[ext_resource path="res://Art/Terrain/slope2.png" type="Texture" id=2]
+[ext_resource path="res://Art/Terrain/slope3.png" type="Texture" id=3]
+[ext_resource path="res://Art/Terrain/slope4.png" type="Texture" id=4]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -16,6 +19,56 @@ points = Vector2Array( -50.4457, 61.0798, -166.544, 91.597, -203.032, 17.9575, -
 
 custom_solver_bias = 0.0
 points = Vector2Array( 33.1451, -55.682, 43.7598, 61.0798, -50.4457, 61.0798 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -203.032, 17.9575, -227.638, -16.5476, -134.235, -27.9236 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -39.0364, 111.582, -165.968, 71.4665, -203.032, 17.9575, -134.235, -27.9236, -38.4377, -35.1084, 41.1942, 95.4159 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 139.986, 54.7019, 41.1942, 95.4159, -38.4377, -35.1084, 33.1451, -55.682, 140.584, -72.8288 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 226.802, -2.77672, 198.336, 41.1772, 139.986, 54.7019, 140.584, -72.8288, 189.082, -81.8098 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 98.8568, -93.3129, 159.816, -102.579, 205.657, -95.7512, 220.288, 5.68494, 124.703, -11.8713, 33.1451, -55.682 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 33.1451, -55.682, 124.703, -11.8713, -2.57938, 46.1619, -30.3768, -14.7974 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -218.619, 42.2605, -225.446, 6.17261, -123.522, 4.22192, -165.968, 71.4665 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -123.522, 4.22192, -30.3768, -14.7974, -2.57938, 46.1619, -117.67, 112.973, -165.968, 71.4665 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 76.7631, -50.7144, 60.6698, 86.8096, -41.7417, 84.3713, -133.912, 46.8204, -204.137, 15.1216, -212.915, -15.6018, -106.115, -39.9855, -40.7663, -54.6158, 27.0204, -61.9308 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 144.55, -38.5225, 238.671, -20.9662, 228.917, 48.7711, 170.884, 62.9136, 60.6698, 86.8096, 76.7631, -50.7144 )
 
 [node name="Slopes" type="Node2D"]
 
@@ -41,6 +94,7 @@ bounce = 0.0
 [node name="slope1" type="Sprite" parent="Slope1"]
 
 texture = ExtResource( 1 )
+modulate = Color( 0.480469, 0.480469, 0.480469, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Slope1"]
 
@@ -48,6 +102,108 @@ transform/pos = Vector2( 1.9902, -0.663422 )
 build_mode = 0
 polygon = Vector2Array( -220.944, -53.0283, -163.227, -55.0186, -75.6557, -56.3454, 33.1451, -55.682, 143.273, -53.6917, 194.356, -51.7015, 244.112, -49.7112, 198.336, 41.1772, 125.36, 102.212, 43.7598, 61.0798, -50.4457, 61.0798, -166.544, 91.597, -203.032, 17.9575 )
 shape_range = Vector2( 0, 2 )
+trigger = false
+
+[node name="Slope2" type="StaticBody2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 459.805, 2.72073 )
+input/pickable = false
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 5 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 6 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 7 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="slope2" type="Sprite" parent="Slope2"]
+
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Slope2"]
+
+transform/pos = Vector2( 1.9902, -0.663422 )
+build_mode = 0
+polygon = Vector2Array( -227.638, -16.5476, -134.235, -27.9236, -38.4377, -35.1084, 33.1451, -55.682, 140.584, -72.8288, 189.082, -81.8098, 226.802, -2.77672, 198.336, 41.1772, 139.986, 54.7019, 41.1942, 95.4159, -39.0364, 111.582, -165.968, 71.4665, -203.032, 17.9575 )
+shape_range = Vector2( 0, 3 )
+trigger = false
+
+[node name="Slope3" type="StaticBody2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 288.061, 394.964 )
+input/pickable = false
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 9 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 10 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 11 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="slope3" type="Sprite" parent="Slope3"]
+
+texture = ExtResource( 3 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Slope3"]
+
+transform/pos = Vector2( 1.9902, -0.663422 )
+build_mode = 0
+polygon = Vector2Array( -225.446, 6.17261, -123.522, 4.22192, -30.3768, -14.7974, 33.1451, -55.682, 98.8568, -93.3129, 159.816, -102.579, 205.657, -95.7512, 220.288, 5.68494, 124.703, -11.8713, -2.57938, 46.1619, -117.67, 112.973, -165.968, 71.4665, -218.619, 42.2605 )
+shape_range = Vector2( 0, 3 )
+trigger = false
+
+[node name="Slope4" type="StaticBody2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 288.061, 394.964 )
+input/pickable = false
+shapes/0/shape = SubResource( 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 13 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
+shapes/1/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="slope3" type="Sprite" parent="Slope4"]
+
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Slope4"]
+
+transform/pos = Vector2( 1.9902, -0.663422 )
+build_mode = 0
+polygon = Vector2Array( -212.915, -15.6018, -106.115, -39.9855, -40.7663, -54.6158, 27.0204, -61.9308, 76.7631, -50.7144, 144.55, -38.5225, 238.671, -20.9662, 228.917, 48.7711, 170.884, 62.9136, 60.6698, 86.8096, -41.7417, 84.3713, -133.912, 46.8204, -204.137, 15.1216 )
+shape_range = Vector2( 0, 1 )
 trigger = false
 
 
