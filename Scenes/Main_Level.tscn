@@ -27,7 +27,7 @@ max_lines_visible = -1
 
 [node name="Player" parent="." groups=[ "player" ] instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 191.652, 96.5751 )
+transform/pos = Vector2( 179.289, 105.848 )
 
 [node name="Terrain" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
 
@@ -66,6 +66,6 @@ stream/buffering_ms = 500
 
 [node name="Enemy" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 753.571, 246.234 )
+transform/pos = Vector2( 759.752, 246.234 )
 
 

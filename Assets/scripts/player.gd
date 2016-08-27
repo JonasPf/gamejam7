@@ -13,6 +13,7 @@ var detect_left
 var detect_up
 var charging = false
 var started = false
+var start_charging = false
 
 func _ready():
 #	self.add_force(NULL_VECTOR, INITIAL_FORCE)
@@ -70,20 +71,20 @@ func die():
 
 func start_charge():
 	charging = true
+	get_node("SpeechBubble").show()
 
 func stop_charge():
 	charging = false
+	get_node("SpeechBubble").hide()
 
 func _fixed_process(delta):
 	set_axis_velocity(Vector2(velocity,0))
 
 	detect_collision()
 
-	if Input.is_action_pressed("charge"):
-		get_node("Label").show()
-		get_node("Label/AnimationPlayer").play("show")
-		
-		self.apply_impulse(NULL_VECTOR, NULL_VECTOR)
+	if not start_charging and Input.is_action_pressed("charge"):
+		start_charging = true
+		get_node("Player_Anim").play("to_charge")
 
 	if feet.is_colliding():
 		if Input.is_action_pressed("jump"):
