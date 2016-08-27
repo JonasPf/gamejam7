@@ -11,6 +11,7 @@ var velocity = 150
 var detect_right
 var detect_left
 var detect_up
+var charging = false
 
 func _ready():
 #	self.add_force(NULL_VECTOR, INITIAL_FORCE)
@@ -30,9 +31,21 @@ func detect_collision():
 	if detect_right.is_colliding() || detect_left.is_colliding() || detect_up.is_colliding():
 		var obj = detect_right.get_collider()
 		if obj.is_in_group("enemies"):
-			obj.set_hit()
+			if charging:
+				obj.set_hit()
+			else:
+				die()
 		elif obj.is_in_group("grounds"):
-			get_tree().change_scene("res://Scenes/Intro.tscn")
+			die()
+
+func die():
+	get_tree().change_scene("res://Scenes/Intro.tscn")
+
+func start_charge():
+	charging = true
+
+func stop_charge():
+	charging = false
 
 func _fixed_process(delta):
 	set_axis_velocity(Vector2(velocity,0))
@@ -40,6 +53,9 @@ func _fixed_process(delta):
 	detect_collision()
 
 	if Input.is_action_pressed("charge"):
+		get_node("Label").show()
+		get_node("Label/AnimationPlayer").play("show")
+		
 		self.apply_impulse(NULL_VECTOR, NULL_VECTOR)
 
 	if feet.is_colliding():
