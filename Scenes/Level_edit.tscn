@@ -1,14 +1,17 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Art/Terrain/seamles_stone.jpg" type="Texture" id=1]
-[ext_resource path="res://Art/Terrain/glow.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/deco/torch.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/slopes/Slope1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/slopes/Slope2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/slopes/Slope3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/slopes/Slope4.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/deco/box.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/deco/torch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Art/Terrain/glow.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/slopes/Slope1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/slopes/Slope2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/slopes/Slope3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/slopes/Slope4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Victory.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Restart.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/spike.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,8 +20,8 @@ transform/scale = Vector2( 1.09052, 0.921118 )
 
 [node name="Background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 3435.9, 860.63 )
-transform/scale = Vector2( 7.55535, 5.63919 )
+transform/pos = Vector2( 6244.4, 1999.55 )
+transform/scale = Vector2( 13.0631, 9.462 )
 texture = ExtResource( 1 )
 modulate = Color( 0.191406, 0.0843593, 0.05159, 1 )
 region = true
@@ -26,14 +29,25 @@ region_rect = Rect2( 0, 0, 1024, 600 )
 
 [node name="Lights" type="Node2D" parent="."]
 
-visibility/visible = false
+[node name="Node2D" parent="Lights" instance=ExtResource( 2 )]
 
-[node name="Light2D" type="Light2D" parent="Lights"]
+transform/pos = Vector2( 445.074, -184.915 )
 
-transform/pos = Vector2( 1970.74, 231.284 )
+[node name="torch" parent="Lights/Node2D"]
+
+transform/pos = Vector2( 37.5025, -34.533 )
+frame = 2
+
+[node name="Light2D" parent="Lights/Node2D/torch"]
+
+color = Color( 0.800781, 0.664418, 0.519257, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
 transform/scale = Vector2( 2.02352, 2.02352 )
 enabled = true
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 0, 0 )
 scale = 1.93
 color = Color( 0.953125, 0.520862, 0.234558, 1 )
@@ -51,90 +65,928 @@ shadow/buffer_size = 2048
 shadow/esm_multiplier = 80.0
 shadow/item_mask = 1
 
-[node name="Node2D" parent="Lights" instance=ExtResource( 3 )]
+[node name="Node2D1" parent="Lights" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-transform/pos = Vector2( 445.074, -184.915 )
+transform/pos = Vector2( 1698.18, 52.4548 )
+transform/scale = Vector2( 1, 1 )
 
-[node name="torch" parent="Lights/Node2D"]
+[node name="Light2D" type="Light2D" parent="Lights/Node2D1"]
 
-transform/pos = Vector2( 37.5025, -34.533 )
-frame = 2
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
 
-[node name="Light2D" parent="Lights/Node2D/torch"]
+[node name="Node2D2" parent="Lights" instance=ExtResource( 2 )]
 
-color = Color( 0.800781, 0.664418, 0.519257, 1 )
+transform/pos = Vector2( 2924.29, 390.25 )
+transform/scale = Vector2( 1, 1 )
 
-[node name="RigidBody2D" parent="." instance=ExtResource( 4 )]
+[node name="Light2D" type="Light2D" parent="Lights/Node2D2"]
 
-editor/display_folded = true
-transform/pos = Vector2( 1354.58, 133.476 )
-mode = 3
-mass = 10.0
-velocity/linear = Vector2( 5, 0 )
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
 
-[node name="body" parent="RigidBody2D"]
+[node name="Node2D3" parent="Lights" instance=ExtResource( 2 )]
 
-editor/display_folded = true
+transform/pos = Vector2( 4138.84, 207.658 )
+transform/scale = Vector2( 1, 1 )
 
-[node name="CollisionShape2D" parent="RigidBody2D"]
+[node name="Light2D" type="Light2D" parent="Lights/Node2D3"]
 
-transform/pos = Vector2( 19.4445, 38.8141 )
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D4" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5458.13, 317.749 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D4"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D5" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 5522.06, 1466.83 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D5"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D6" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 7108.7, 572.335 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D6"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D7" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 7879.35, 1529.16 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D7"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D8" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 9274.57, 1783.76 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D8"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D9" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 10848.1, 1783.76 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D9"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D12" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11028.2, 1674.44 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D12"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D13 3" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11028.2, 1674.44 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D13 3"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D10" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 10998.3, 1780.4 )
+transform/rot = 36.8642
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D10"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D13" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 10998.3, 1780.4 )
+transform/rot = 36.8642
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D13"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D12 2" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11178.4, 1671.08 )
+transform/rot = 36.8642
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D12 2"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D123" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11178.4, 1671.08 )
+transform/rot = 36.8642
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D123"]
+
+transform/pos = Vector2( 21.941, -53.9759 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D11" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11137.2, 1676.38 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D11"]
+
+transform/pos = Vector2( 20.9164, -50.9267 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D14" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11144, 1435.29 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D14"]
+
+transform/pos = Vector2( 20.9164, -50.9267 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D13 2" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11137.2, 1676.38 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D13 2"]
+
+transform/pos = Vector2( 20.9164, -50.9267 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D133" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11144, 1435.29 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D133"]
+
+transform/pos = Vector2( 20.9164, -50.9267 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D12 3" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11317.3, 1567.06 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D12 3"]
+
+transform/pos = Vector2( -37.7938, -53.301 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D125" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11324.1, 1325.97 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D125"]
+
+transform/pos = Vector2( -37.7938, -53.301 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D124" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11317.3, 1567.06 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D124"]
+
+transform/pos = Vector2( -37.7938, -53.301 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Node2D125 2" parent="Lights" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 11324.1, 1325.97 )
+transform/rot = 50.409
+transform/scale = Vector2( 1, 1 )
+
+[node name="Light2D" type="Light2D" parent="Lights/Node2D125 2"]
+
+transform/pos = Vector2( -37.7938, -53.301 )
+transform/scale = Vector2( 2.02352, 2.02352 )
+enabled = true
+texture = ExtResource( 3 )
+offset = Vector2( 0, 0 )
+scale = 1.93
+color = Color( 0.953125, 0.520862, 0.234558, 1 )
+energy = 4.03
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
 
 [node name="SLOPES" type="Node2D" parent="."]
 
-[node name="Slope1" parent="SLOPES" instance=ExtResource( 5 )]
+editor/display_folded = true
+
+[node name="Slope1" parent="SLOPES" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 201.195, 122.438 )
 
-[node name="Slope5" parent="SLOPES" instance=ExtResource( 5 )]
+[node name="Slope11" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 201.195, 122.438 )
+
+[node name="Slope5" parent="SLOPES" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 644.04, 220.901 )
 
-[node name="Slope8" parent="SLOPES" instance=ExtResource( 5 )]
+[node name="Slope8" parent="SLOPES" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 3015.03, 743.828 )
 
-[node name="Slope2" parent="SLOPES" instance=ExtResource( 6 )]
+[node name="Slope16" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 5659.37, 1525.19 )
+transform/rot = 62.7511
+
+[node name="Slope33" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 5380.55, 1525.19 )
+transform/rot = -53.5532
+
+[node name="Slope17" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 5937.88, 1305.84 )
+transform/rot = 16.4361
+
+[node name="Slope29 2" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 10520.2, 2116.87 )
+transform/rot = -0.97788
+
+[node name="Slope18" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 6329.89, 1189.31 )
+transform/rot = 16.4361
+
+[node name="Slope29" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 10960.7, 2057.74 )
+transform/rot = 16.4361
+
+[node name="Slope30" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 11302.4, 1800.83 )
+transform/rot = 55.6394
+
+[node name="Slope31" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 11470.9, 1407.26 )
+transform/rot = 80.3965
+
+[node name="Slope19" parent="SLOPES" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 6742.26, 1048.67 )
+transform/rot = 22.6706
+
+[node name="Slope2" parent="SLOPES" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1010.57, 328.014 )
 transform/rot = -37.1779
 
-[node name="Slope3" parent="SLOPES" instance=ExtResource( 7 )]
+[node name="Slope3" parent="SLOPES" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 1874.44, 369.144 )
 
-[node name="Slope7" parent="SLOPES" instance=ExtResource( 7 )]
+[node name="Slope7" parent="SLOPES" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 2579.69, 671.791 )
 transform/rot = -30.1414
 
-[node name="Slope4" parent="SLOPES" instance=ExtResource( 8 )]
+[node name="Slope21" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 7512.62, 1102.41 )
+transform/rot = -30.1414
+
+[node name="Slope26" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 5445.61, 668.062 )
+transform/rot = -12.8501
+
+[node name="Slope28 2" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 9659.9, 2224.66 )
+transform/rot = -12.8501
+
+[node name="Slope27" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 5876.21, 599.052 )
+transform/rot = 5.05138
+
+[node name="Slope28 3" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 10090.5, 2155.65 )
+transform/rot = 5.05138
+
+[node name="Slope13" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 4427.57, 709.699 )
+transform/rot = -49.7897
+
+[node name="Slope14" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 4769.26, 958.829 )
+transform/rot = -49.7897
+
+[node name="Slope15" parent="SLOPES" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 5110.95, 1222.76 )
+transform/rot = -49.7897
+
+[node name="Slope4" parent="SLOPES" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 1419.65, 392.865 )
 
-[node name="Slope9" parent="SLOPES" instance=ExtResource( 8 )]
+[node name="Slope9" parent="SLOPES" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 3310.12, 661.309 )
 transform/rot = 14.9909
 
-[node name="Slope10" parent="SLOPES" instance=ExtResource( 8 )]
+[node name="Slope10" parent="SLOPES" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 3682.99, 535.555 )
 transform/rot = 19.9253
 transform/scale = Vector2( -0.979847, 1 )
 
-[node name="Slope6" parent="SLOPES" instance=ExtResource( 8 )]
+[node name="Slope12" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 4093.89, 522.778 )
+transform/rot = -12.2986
+transform/scale = Vector2( -0.979847, 1 )
+
+[node name="Slope20" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 7123.44, 982.558 )
+transform/rot = -9.1439
+transform/scale = Vector2( -0.979847, 1 )
+
+[node name="Slope22" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 7969.33, 1907.55 )
+transform/rot = -9.1439
+transform/scale = Vector2( -0.979847, 1 )
+
+[node name="Slope25" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 5081.87, 629.425 )
+transform/rot = -9.0884
+transform/scale = Vector2( -0.979847, 1.1481 )
+
+[node name="Slope28" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 9296.16, 2186.02 )
+transform/rot = -9.0884
+transform/scale = Vector2( -0.979847, 1.1481 )
+
+[node name="Slope32" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 8921.57, 2226.93 )
+transform/rot = 26.1772
+transform/scale = Vector2( -0.979847, 1.1481 )
+
+[node name="Slope23" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 8434.73, 1929.19 )
+transform/rot = 8.9538
+transform/scale = Vector2( -1.25926, 1.30037 )
+
+[node name="Slope24" parent="SLOPES" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 8803.48, 2457.15 )
+transform/rot = -29.4782
+transform/scale = Vector2( -1.25926, 1.30037 )
+
+[node name="Slope6" parent="SLOPES" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 2218.79, 437.388 )
 transform/rot = -42.5637
 
 [node name="boxes" type="Node2D" parent="."]
 
-[node name="box" parent="boxes" instance=ExtResource( 9 )]
+editor/display_folded = true
 
-transform/pos = Vector2( 1520, 282.573 )
+[node name="Enemy" parent="boxes" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 2665.46, 580.73 )
+
+[node name="Enemy5" parent="boxes" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 1450.44, 268.806 )
+
+[node name="Enemy1" parent="boxes" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 3892.82, 391.752 )
+
+[node name="Enemy2" parent="boxes" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 5843.19, 1205.01 )
+transform/rot = 17.4236
+
+[node name="Enemy3" parent="boxes" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 6816.88, 891.49 )
+transform/rot = 21.4745
+
+[node name="Enemy4" parent="boxes" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 8400.58, 1791 )
+transform/rot = 9.64587
+
+[node name="Victory" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 9518.66, 1695.63 )
+
+[node name="Restart" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 11109.1, 1505.66 )
+
+[node name="RigidBody2D" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 16.092, -130.465 )
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="spike" parent="Spikes" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 8652.64, 2148.75 )
+
+[node name="spike1" parent="Spikes" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 8708.66, 2159.37 )
+transform/rot = 18.0768
+
+[node name="spike2" parent="Spikes" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 8763.96, 2192.76 )
+transform/rot = -21.1427
+transform/scale = Vector2( -1.03308, 1.09017 )
+
+[node name="spike 2" parent="Spikes" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 5554.21, 1469.36 )
+
+[node name="Sprite" parent="Spikes/spike 2/StaticBody2D"]
+
+modulate = Color( 1, 0.708618, 0.515625, 1 )
+
+[node name="spike3" parent="Spikes" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 5510.3, 1478.69 )
+transform/rot = 10.8382
+
+[node name="spike4" parent="Spikes" instance=ExtResource( 12 )]
+
+transform/pos = Vector2( 5494.11, 1440.82 )
+transform/rot = -17.6032
+transform/scale = Vector2( 0.78743, 0.88913 )
 
 
 [editable path="Lights/Node2D"]
-[editable path="RigidBody2D"]
+[editable path="Spikes/spike 2"]

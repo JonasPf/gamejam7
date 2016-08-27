@@ -41,7 +41,6 @@ bounce = 0.0
 [node name="slope1" type="Sprite" parent="Slope1"]
 
 texture = ExtResource( 1 )
-modulate = Color( 0.480469, 0.480469, 0.480469, 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Slope1"]
 

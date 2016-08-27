@@ -36,6 +36,7 @@ texture = ExtResource( 1 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Slope4"]
 
+visibility/visible = false
 transform/pos = Vector2( 1.9902, -0.663422 )
 build_mode = 0
 polygon = Vector2Array( -212.915, -15.6018, -106.115, -39.9855, -40.7663, -54.6158, 27.0204, -61.9308, 76.7631, -50.7144, 144.55, -38.5225, 238.671, -20.9662, 228.917, 48.7711, 170.884, 62.9136, 60.6698, 86.8096, -41.7417, 84.3713, -133.912, 46.8204, -204.137, 15.1216 )
