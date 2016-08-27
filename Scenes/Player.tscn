@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=1]
 
-[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Art/boar.png" type="Texture" id=2]
 [ext_resource path="res://Art/head.png" type="Texture" id=3]
 [ext_resource path="res://Art/body.png" type="Texture" id=4]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Sound/russian_boar_squeal.wav" type="Sample" id=16]
 [ext_resource path="res://Art/GUI/title.png" type="Texture" id=17]
 [ext_resource path="res://Art/GUI/controls_instructions.png" type="Texture" id=18]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -463,7 +464,6 @@ tracks/0/type = "value"
 tracks/0/path = NodePath(".:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-
 tracks/0/keys = { "times":FloatArray( 0, 0.4, 0.8 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( -0.317602, -1.58799 ), Vector2( -19.0825, 7.79446 ), Vector2( -10.5447, -16.3351 ) ] }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:transform/rot")
