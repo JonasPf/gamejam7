@@ -43,14 +43,16 @@ func intro():
 	get_node("TextControls").hide()
 	get_node("TextPressAny").hide()
 	get_node("TextTitle").hide()
+	get_node("SamplePlayer").play("goblin_battlecry")
 
 func start_game():
 	set_mode(MODE_RIGID)
 	get_node("Player_Anim").play("Run")
-	get_node("SamplePlayer").play("goblin_battlecry")
 
 func victory():
 	get_node("TextVictory").show()
+	get_node("SamplePlayer").play("charge_trumpet_perhaps")
+
 #	get_node("Player_Anim").play("Epic")
 #	velocity = 0
 
@@ -97,6 +99,7 @@ func _fixed_process(delta):
 		get_node("Player_Anim").play("to_charge")
 
 	if feet.is_colliding():
+#		get_node("SamplePlayer").play("gallop_loop", true)
 		if Input.is_action_pressed("jump"):
 			set_axis_velocity(Vector2(0,-jump_height))
 			get_node("SamplePlayer").play("boar_gruntsqueal")
