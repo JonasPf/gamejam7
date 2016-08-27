@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=33 format=1]
 
 [ext_resource path="res://Assets/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Art/boar.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Art/GUI/victory.png" type="Texture" id=18]
 [ext_resource path="res://Art/GUI/controls_instructions.png" type="Texture" id=19]
 [ext_resource path="res://Art/GUI/press_any_explain.png" type="Texture" id=20]
+[ext_resource path="res://Art/charge_speech_bubble.png" type="Texture" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -218,85 +219,75 @@ length = 3.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:transform/pos")
+tracks/0/path = NodePath("body:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.3, 0.7 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( -0.187658, -0.938277 ), Vector2( -2.13835, -12.1548 ), Vector2( -0.187658, -0.938277 ) ] }
+tracks/0/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 0.219635, 82.8009 ) ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:transform/rot")
+tracks/1/path = NodePath("body:transform/rot")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.3, 0.7 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 33.7208, 0.0 ] }
+tracks/1/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 0.0 ] }
 tracks/2/type = "value"
-tracks/2/path = NodePath("body:transform/pos")
+tracks/2/path = NodePath("body/leg_back:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 0.219635, 82.8009 ) ] }
+tracks/2/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( -51.5983, -60.2287 ) ] }
 tracks/3/type = "value"
-tracks/3/path = NodePath("body:transform/rot")
+tracks/3/path = NodePath("body/leg_back:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 0.0 ] }
+tracks/3/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 2.84971 ] }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body/leg_back:transform/pos")
+tracks/4/path = NodePath("body/goblin_body:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( -51.5983, -60.2287 ) ] }
+tracks/4/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 5.70642, -121.426 ), Vector2( 5.70642, -121.426 ) ] }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body/leg_back:transform/rot")
+tracks/5/path = NodePath("body/goblin_body:transform/rot")
 tracks/5/interp = 1
 tracks/5/imported = false
-tracks/5/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ 2.84971 ] }
+tracks/5/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -13.2864, 4.28491 ] }
 tracks/6/type = "value"
-tracks/6/path = NodePath("body/goblin_body:transform/pos")
+tracks/6/path = NodePath("body/leg_front:transform/pos")
 tracks/6/interp = 1
 tracks/6/imported = false
-tracks/6/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 5.70642, -121.426 ), Vector2( 5.70642, -121.426 ) ] }
+tracks/6/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 42.7862, -58.936 ) ] }
 tracks/7/type = "value"
-tracks/7/path = NodePath("body/goblin_body:transform/rot")
+tracks/7/path = NodePath("body/leg_front:transform/rot")
 tracks/7/interp = 1
 tracks/7/imported = false
-tracks/7/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -13.2864, 4.28491 ] }
+tracks/7/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ -2.77326 ] }
 tracks/8/type = "value"
-tracks/8/path = NodePath("body/leg_front:transform/pos")
+tracks/8/path = NodePath("body/goblin_body/upper_arm:transform/pos")
 tracks/8/interp = 1
 tracks/8/imported = false
-tracks/8/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ Vector2( 42.7862, -58.936 ) ] }
+tracks/8/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -21.9843, -42.7067 ), Vector2( -21.9843, -42.7067 ) ] }
 tracks/9/type = "value"
-tracks/9/path = NodePath("body/leg_front:transform/rot")
+tracks/9/path = NodePath("body/goblin_body/upper_arm:transform/rot")
 tracks/9/interp = 1
 tracks/9/imported = false
-tracks/9/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ -2.77326 ] }
+tracks/9/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 54.185, 200.881 ] }
 tracks/10/type = "value"
-tracks/10/path = NodePath("body/goblin_body/upper_arm:transform/pos")
+tracks/10/path = NodePath("body/head:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
-tracks/10/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -21.9843, -42.7067 ), Vector2( -21.9843, -42.7067 ) ] }
+tracks/10/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 58.6611, -105.393 ), Vector2( 58.6611, -105.393 ) ] }
 tracks/11/type = "value"
-tracks/11/path = NodePath("body/goblin_body/upper_arm:transform/rot")
+tracks/11/path = NodePath("body/head:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
-tracks/11/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 54.185, 200.881 ] }
+tracks/11/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -11.272, 47.9476 ] }
 tracks/12/type = "value"
-tracks/12/path = NodePath("body/head:transform/pos")
+tracks/12/path = NodePath("body/goblin_body/upper_arm/weapon:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
-tracks/12/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 58.6611, -105.393 ), Vector2( 58.6611, -105.393 ) ] }
+tracks/12/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -13.6364, 15.035 ), Vector2( -13.6364, 15.035 ) ] }
 tracks/13/type = "value"
-tracks/13/path = NodePath("body/head:transform/rot")
+tracks/13/path = NodePath("body/goblin_body/upper_arm/weapon:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
-tracks/13/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -11.272, 47.9476 ] }
-tracks/14/type = "value"
-tracks/14/path = NodePath("body/goblin_body/upper_arm/weapon:transform/pos")
-tracks/14/interp = 1
-tracks/14/imported = false
-tracks/14/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -13.6364, 15.035 ), Vector2( -13.6364, 15.035 ) ] }
-tracks/15/type = "value"
-tracks/15/path = NodePath("body/goblin_body/upper_arm/weapon:transform/rot")
-tracks/15/interp = 1
-tracks/15/imported = false
-tracks/15/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -9.94053, -68.9431 ] }
+tracks/13/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -9.94053, -68.9431 ] }
 
 [sub_resource type="Animation" id=6]
 
@@ -375,85 +366,60 @@ length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:transform/pos")
+tracks/0/path = NodePath("body/leg_back:transform/rot")
 tracks/0/interp = 1
 tracks/0/imported = false
-tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -0.317602, -1.58799 ), Vector2( -0.317602, -1.58799 ) ] }
+tracks/0/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -39.7022, 21.7088 ] }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:transform/rot")
+tracks/1/path = NodePath("body/goblin_body:transform/pos")
 tracks/1/interp = 1
 tracks/1/imported = false
-tracks/1/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 7.33253, 0.0648731 ] }
+tracks/1/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 5.70642, -121.426 ), Vector2( 5.70642, -121.426 ) ] }
 tracks/2/type = "value"
-tracks/2/path = NodePath("body:transform/pos")
+tracks/2/path = NodePath("body/goblin_body:transform/rot")
 tracks/2/interp = 1
 tracks/2/imported = false
-tracks/2/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 0.219635, 82.8009 ), Vector2( 0.219635, 82.8009 ) ] }
+tracks/2/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -24.7225, -8.05173 ] }
 tracks/3/type = "value"
-tracks/3/path = NodePath("body:transform/rot")
+tracks/3/path = NodePath("body/leg_front:transform/pos")
 tracks/3/interp = 1
 tracks/3/imported = false
-tracks/3/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 0.0 ] }
+tracks/3/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 42.7862, -58.936 ), Vector2( 42.7862, -58.936 ) ] }
 tracks/4/type = "value"
-tracks/4/path = NodePath("body/leg_back:transform/pos")
+tracks/4/path = NodePath("body/leg_front:transform/rot")
 tracks/4/interp = 1
 tracks/4/imported = false
-tracks/4/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -51.5983, -60.2287 ), Vector2( -51.5983, -60.2287 ) ] }
+tracks/4/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 38.6628, -16.9259 ] }
 tracks/5/type = "value"
-tracks/5/path = NodePath("body/leg_back:transform/rot")
+tracks/5/path = NodePath("body/head:transform/pos")
 tracks/5/interp = 1
 tracks/5/imported = false
-tracks/5/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -39.7022, 21.7088 ] }
+tracks/5/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 59.1012, -105.393 ), Vector2( 59.1012, -105.393 ) ] }
 tracks/6/type = "value"
-tracks/6/path = NodePath("body/goblin_body:transform/pos")
+tracks/6/path = NodePath("body/head:transform/rot")
 tracks/6/interp = 1
 tracks/6/imported = false
-tracks/6/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 5.70642, -121.426 ), Vector2( 5.70642, -121.426 ) ] }
+tracks/6/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 16.0519, -29.1806 ] }
 tracks/7/type = "value"
-tracks/7/path = NodePath("body/goblin_body:transform/rot")
+tracks/7/path = NodePath("body/goblin_body/upper_arm/weapon:transform/pos")
 tracks/7/interp = 1
 tracks/7/imported = false
-tracks/7/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -24.7225, -8.05173 ] }
+tracks/7/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -13.6364, 15.035 ), Vector2( -13.6364, 15.035 ) ] }
 tracks/8/type = "value"
-tracks/8/path = NodePath("body/leg_front:transform/pos")
+tracks/8/path = NodePath("body/goblin_body/upper_arm/weapon:transform/rot")
 tracks/8/interp = 1
 tracks/8/imported = false
-tracks/8/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 42.7862, -58.936 ), Vector2( 42.7862, -58.936 ) ] }
+tracks/8/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -22.3636, -33.0646 ] }
 tracks/9/type = "value"
-tracks/9/path = NodePath("body/leg_front:transform/rot")
+tracks/9/path = NodePath("body/goblin_body/upper_arm:transform/pos")
 tracks/9/interp = 1
 tracks/9/imported = false
-tracks/9/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 38.6628, -16.9259 ] }
+tracks/9/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -21.9843, -42.7067 ), Vector2( -21.9843, -42.7067 ) ] }
 tracks/10/type = "value"
-tracks/10/path = NodePath("body/head:transform/pos")
+tracks/10/path = NodePath("body/goblin_body/upper_arm:transform/rot")
 tracks/10/interp = 1
 tracks/10/imported = false
-tracks/10/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( 59.1012, -105.393 ), Vector2( 59.1012, -105.393 ) ] }
-tracks/11/type = "value"
-tracks/11/path = NodePath("body/head:transform/rot")
-tracks/11/interp = 1
-tracks/11/imported = false
-tracks/11/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 16.0519, -29.1806 ] }
-tracks/12/type = "value"
-tracks/12/path = NodePath("body/goblin_body/upper_arm/weapon:transform/pos")
-tracks/12/interp = 1
-tracks/12/imported = false
-tracks/12/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -13.6364, 15.035 ), Vector2( -13.6364, 15.035 ) ] }
-tracks/13/type = "value"
-tracks/13/path = NodePath("body/goblin_body/upper_arm/weapon:transform/rot")
-tracks/13/interp = 1
-tracks/13/imported = false
-tracks/13/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -22.3636, -33.0646 ] }
-tracks/14/type = "value"
-tracks/14/path = NodePath("body/goblin_body/upper_arm:transform/pos")
-tracks/14/interp = 1
-tracks/14/imported = false
-tracks/14/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ Vector2( -21.9843, -42.7067 ), Vector2( -21.9843, -42.7067 ) ] }
-tracks/15/type = "value"
-tracks/15/path = NodePath("body/goblin_body/upper_arm:transform/rot")
-tracks/15/interp = 1
-tracks/15/imported = false
-tracks/15/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 23.7915, 58.5768 ] }
+tracks/10/keys = { "times":FloatArray( 0, 0.4 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 23.7915, 58.5768 ] }
 
 [sub_resource type="Animation" id=8]
 
@@ -967,6 +933,7 @@ autoplay = ""
 
 [node name="TextControls" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 27.3984, -219.187 )
 texture = ExtResource( 17 )
 
@@ -978,12 +945,20 @@ texture = ExtResource( 18 )
 
 [node name="TextTitle" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 38.2256, 197.893 )
 texture = ExtResource( 19 )
 
 [node name="TextPressAny" type="Sprite" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 45.628, -7.52527 )
 texture = ExtResource( 20 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 105.514, -176.359 )
+transform/scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 21 )
 
 

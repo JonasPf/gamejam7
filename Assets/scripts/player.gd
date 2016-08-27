@@ -37,12 +37,14 @@ func _input(event):
 func intro():
 	started = true
 	get_node("Scene_Anim").play("Start")
+	get_node("Player_Anim").play("Epic")
 	get_node("TextControls").hide()
 	get_node("TextPressAny").hide()
 	get_node("TextTitle").hide()
 
 func start_game():
 	set_mode(MODE_RIGID)
+	get_node("Player_Anim").play("Run")
 	get_node("SamplePlayer").play("goblin_battlecry")
 
 func detect_collision():
