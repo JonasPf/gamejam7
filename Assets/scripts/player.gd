@@ -1,13 +1,13 @@
 extends RigidBody2D
 
-const JUMP_FORCE = Vector2(0, -3000)
+#const JUMP_FORCE = Vector2(0, -3000)
 const INITIAL_FORCE = Vector2(100, 0)
 const NULL_VECTOR = Vector2(0, 0)
 
 var player
 var feet
-var jump_height = 300
-var velocity = 150
+var jump_height = 600
+var velocity = 350
 var detect_right
 var detect_left
 var detect_up
