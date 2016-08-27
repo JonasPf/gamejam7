@@ -38,6 +38,7 @@ func intro():
 	started = true
 	get_node("Scene_Anim").play("Start")
 	get_node("TextControls").hide()
+	get_node("TextPressAny").hide()
 	get_node("TextTitle").hide()
 
 func start_game():
@@ -57,7 +58,8 @@ func detect_collision():
 			die()
 
 func die():
-	get_tree().change_scene("res://Scenes/Intro.tscn")
+	get_tree().reload_current_scene()
+#		get_tree().change_scene("res://Scenes/Intro.tscn")
 
 func start_charge():
 	charging = true
