@@ -48,6 +48,14 @@ func start_game():
 	get_node("Player_Anim").play("Run")
 	get_node("SamplePlayer").play("goblin_battlecry")
 
+func victory():
+	get_node("TextVictory").show()
+#	get_node("Player_Anim").play("Epic")
+#	velocity = 0
+
+func restart():
+	get_tree().reload_current_scene()
+
 func detect_collision():
 	if detect_right.is_colliding() || detect_left.is_colliding() || detect_up.is_colliding():
 		var obj = detect_right.get_collider()

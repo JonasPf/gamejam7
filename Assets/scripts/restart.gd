@@ -1,3 +1,4 @@
+
 extends RayCast2D
 
 func _ready():
@@ -7,6 +8,4 @@ func _fixed_process(delta):
 	if is_colliding():
 		if get_collider().is_in_group("player"):
 			var player = get_node("../Player")
-			player.victory()
-#			get_tree().change_scene("res://Scenes/Intro.tscn")
-
+			player.restart()
