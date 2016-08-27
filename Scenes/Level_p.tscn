@@ -103,12 +103,12 @@ points = Vector2Array( 33.1451, -55.682, 43.7598, 61.0798, -50.4457, 61.0798 )
 
 [node name="Node2D" type="Node2D"]
 
-transform/pos = Vector2( 2.89658, -2.52423 )
+transform/pos = Vector2( 2.89664, -6.729 )
 transform/scale = Vector2( 1.09052, 0.921118 )
 
 [node name="Background" type="Sprite" parent="."]
 
-transform/pos = Vector2( 3434.67, 868.635 )
+transform/pos = Vector2( 3442.58, 868.635 )
 transform/scale = Vector2( 7.55535, 5.63919 )
 texture = ExtResource( 1 )
 modulate = Color( 0.191406, 0.0843593, 0.05159, 1 )
@@ -116,6 +116,8 @@ region = true
 region_rect = Rect2( 0, 0, 1024, 600 )
 
 [node name="Lights" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="Light2D" type="Light2D" parent="Lights"]
 
@@ -145,7 +147,7 @@ shadow/item_mask = 1
 transform/pos = Vector2( 1120.08, -58.234 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 __meta__ = { "_edit_group_":true }
 
@@ -185,7 +187,7 @@ light_mask = 1
 transform/pos = Vector2( 2904.59, -429.939 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 __meta__ = { "_edit_group_":true }
 
@@ -223,11 +225,13 @@ light_mask = 1
 [node name="Slopes" type="Node2D" parent="."]
 
 editor/display_folded = true
+transform/pos = Vector2( 401.847, 619.534 )
 
 [node name="Slope12" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 2669.12, 246.064 )
-transform/rot = 32.1898
+transform/pos = Vector2( 1697.26, 61.7076 )
+transform/rot = -4.69935
+transform/scale = Vector2( -1, 1 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -264,7 +268,7 @@ trigger = false
 
 [node name="Slope1 2" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 226.678, 355.998 )
+transform/pos = Vector2( -127.33, -366.242 )
 input/pickable = false
 shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -372,7 +376,7 @@ trigger = false
 
 [node name="Slope3" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 1225.37, 427.602 )
+transform/pos = Vector2( 233.54, -417.172 )
 input/pickable = false
 shapes/0/shape = SubResource( 10 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -409,7 +413,7 @@ trigger = false
 
 [node name="Slope6" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 2292.86, 420.349 )
+transform/pos = Vector2( 2431.75, -3.72052 )
 input/pickable = false
 shapes/0/shape = SubResource( 10 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -446,7 +450,7 @@ trigger = false
 
 [node name="Slope5" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 1590.97, 435.88 )
+transform/pos = Vector2( 606.276, -400.446 )
 transform/rot = -212.402
 transform/scale = Vector2( -0.904261, -1.02286 )
 input/pickable = false
@@ -485,7 +489,7 @@ trigger = false
 
 [node name="Slope4" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 1980.51, 460.847 )
+transform/pos = Vector2( 1324.05, -71.3607 )
 input/pickable = false
 shapes/0/shape = SubResource( 14 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -516,7 +520,7 @@ trigger = false
 
 [node name="Slope8" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 3000.03, 87.3455 )
+transform/pos = Vector2( 1294.65, 2047.22 )
 transform/rot = 3.68622
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -555,7 +559,7 @@ trigger = false
 [node name="Slope7 2" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 3332.4, 160.874 )
+transform/pos = Vector2( 949.155, -210.827 )
 transform/rot = -46.5979
 input/pickable = false
 shapes/0/shape = SubResource( 10 )
@@ -594,7 +598,7 @@ trigger = false
 [node name="Slope9" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 3564.39, 444.023 )
+transform/pos = Vector2( 1975.11, 287.226 )
 transform/rot = -75.6602
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -633,8 +637,8 @@ trigger = false
 [node name="Slope10" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 3632.42, 788.482 )
-transform/rot = -93.8523
+transform/pos = Vector2( 2833.51, 9.5538 )
+transform/rot = -25.8904
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -672,8 +676,8 @@ trigger = false
 [node name="Slope14" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 3663.83, 1164.01 )
-transform/rot = -93.8523
+transform/pos = Vector2( 3104.16, 218.169 )
+transform/rot = -62.462
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -711,7 +715,7 @@ trigger = false
 [node name="Slope15" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 3870.09, 1497 )
+transform/pos = Vector2( 2229.54, 576.449 )
 transform/rot = -41.4868
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -750,7 +754,7 @@ trigger = false
 [node name="Slope16" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 4253.45, 1601.93 )
+transform/pos = Vector2( 2694.08, 1321.9 )
 transform/rot = -7.4643
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -789,7 +793,7 @@ trigger = false
 [node name="Slope17" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 4676.4, 1614.27 )
+transform/pos = Vector2( 3117.03, 1334.24 )
 transform/rot = -7.4643
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -828,7 +832,7 @@ trigger = false
 [node name="Slope18" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 5068.09, 1542.73 )
+transform/pos = Vector2( 3508.72, 1262.7 )
 transform/rot = 7.69996
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -867,7 +871,7 @@ trigger = false
 [node name="Slope19" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 5600.84, 1342.81 )
+transform/pos = Vector2( 4041.47, 1062.78 )
 transform/rot = 23.5179
 transform/scale = Vector2( 1.88729, 1.58254 )
 input/pickable = false
@@ -907,7 +911,7 @@ trigger = false
 [node name="Slope11" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 4074.87, 909.049 )
+transform/pos = Vector2( 2562.49, 772.484 )
 transform/rot = -31.7154
 input/pickable = false
 shapes/0/shape = SubResource( 14 )
@@ -940,7 +944,7 @@ trigger = false
 [node name="Slope7" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 4447.36, 996.411 )
+transform/pos = Vector2( 3299.74, 809.722 )
 transform/rot = -2.12615
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -979,7 +983,7 @@ trigger = false
 [node name="Slope13" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 4834.84, 952.894 )
+transform/pos = Vector2( 3687.22, 766.205 )
 transform/rot = -2.12615
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -1018,7 +1022,7 @@ trigger = false
 [node name="Slope21" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 5137.26, 794.373 )
+transform/pos = Vector2( 3989.64, 607.684 )
 transform/rot = 38.6958
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -1073,23 +1077,10 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="slope1" type="Sprite" parent="Slopes/Slope1"]
-
-texture = ExtResource( 7 )
-modulate = Color( 0.480469, 0.480469, 0.480469, 1 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Slopes/Slope1"]
-
-transform/pos = Vector2( 1.9902, -0.663422 )
-build_mode = 0
-polygon = Vector2Array( -220.944, -53.0283, -163.227, -55.0186, -75.6557, -56.3454, 33.1451, -55.682, 143.273, -53.6917, 194.356, -51.7015, 244.112, -49.7112, 198.336, 41.1772, 125.36, 102.212, 43.7598, 61.0798, -50.4457, 61.0798, -166.544, 91.597, -203.032, 17.9575 )
-shape_range = Vector2( 0, 2 )
-trigger = false
-
 [node name="Slope73" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 5472.66, 668.189 )
+transform/pos = Vector2( 4325.04, 481.5 )
 transform/rot = -9.89547
 transform/scale = Vector2( 1.09948, 1.3716 )
 input/pickable = false
@@ -1129,7 +1120,7 @@ trigger = false
 [node name="RigidBody2D" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 1354.58, 133.476 )
+transform/pos = Vector2( 281.135, 17.3445 )
 mode = 3
 mass = 10.0
 velocity/linear = Vector2( 5, 0 )

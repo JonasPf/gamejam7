@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Terrain_Shapes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/scripts/finish.gd" type="Script" id=3]
-[ext_resource path="res://Assets/scripts/restart.gd" type="Script" id=4]
-[ext_resource path="res://Sound/epic_music.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sound/epic_music.ogg" type="AudioStream" id=4]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 
@@ -35,22 +34,17 @@ transform/pos = Vector2( 179.289, 105.848 )
 transform/pos = Vector2( 252.2, 365.804 )
 transform/rot = 157.928
 
-[node name="Terrain1" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
+[node name="Terrain1" parent="." groups=[ "ground", "group2" ] instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 1062.84, 315.432 )
 transform/rot = 10.2509
 
-[node name="Terrain3" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 1412.11, 296.887 )
-transform/rot = 166.501
-
-[node name="Terrain2" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
+[node name="Terrain2" parent="." groups=[ "ground", "group2" ] instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 682.034, 387.287 )
 transform/rot = -14.5339
 
-[node name="Victory" type="RayCast2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="."]
 
 transform/pos = Vector2( 1154.22, -252.2 )
 enabled = true
@@ -59,18 +53,9 @@ layer_mask = 1
 type_mask = 15
 script/script = ExtResource( 3 )
 
-[node name="Restart" type="RayCast2D" parent="."]
-
-transform/pos = Vector2( 1617.85, -258.382 )
-enabled = true
-cast_to = Vector2( 0, 500 )
-layer_mask = 1
-type_mask = 15
-script/script = ExtResource( 4 )
-
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 5 )
+stream/stream = ExtResource( 4 )
 stream/play = false
 stream/loop = true
 stream/volume_db = -20.0
@@ -79,7 +64,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="Enemy" parent="." instance=ExtResource( 6 )]
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 911.205, 243.143 )
 
