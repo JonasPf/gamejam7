@@ -24,7 +24,7 @@ points = Vector2Array( 210.869, -45.39, 214.553, 60.1954, 171.582, 94.5721, 40.2
 
 [node name="Terrain1" type="Node2D" groups=[ "grounds" ]]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." groups=[ "grounds" ]]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )

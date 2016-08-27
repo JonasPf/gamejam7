@@ -909,6 +909,7 @@ drag_margin/bottom = 0.2
 
 [node name="Label" type="Label" parent="."]
 
+editor/display_folded = true
 visibility/opacity = 0.0
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -973,7 +974,6 @@ texture = ExtResource( 17 )
 
 [node name="TextVictory" type="Sprite" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( 27.3984, -219.187 )
 texture = ExtResource( 18 )
 
