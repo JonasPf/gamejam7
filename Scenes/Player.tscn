@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://Art/boar.png" type="Texture" id=2]
@@ -643,10 +643,36 @@ tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = { "times":FloatArray( 0, 0.3, 1 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 46.9817, 107.519, 107.519 ] }
 
+[sub_resource type="Animation" id=3]
+
+resource/name = "show"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 1, 2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 1, 1 ) ] }
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 1 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"start_charge" } ] }
+tracks/2/type = "method"
+tracks/2/path = NodePath("..")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = { "times":FloatArray( 2 ), "transitions":FloatArray( 1 ), "values":[ { "args":[  ], "method":"stop_charge" } ] }
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visibility/opacity")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = { "times":FloatArray( 0, 1, 2 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ 0.0, 1.0, 0.0 ] }
+
 [node name="RigidBody2D" type="RigidBody2D"]
 
-transform/pos = Vector2( -1.26044, -2.94753 )
-transform/rot = 9.27218
+transform/pos = Vector2( 242.659, 83.1025 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3.22071, 0, 0, 2.9547, 2.2765, -0.0736427 )
@@ -654,10 +680,10 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 0
-mass = 1.0
+mass = 5.0
 friction = 0.0
 bounce = 0.0
-gravity_scale = 1.0
+gravity_scale = 10.0
 custom_integrator = false
 continuous_cd = 0
 contacts_reported = 1
@@ -773,21 +799,76 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
-[node name="Player_Anim" type="AnimationPlayer" parent="."]
+[node name="Feet" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, 35 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Left" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( -35, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Right" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 35, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Up" type="RayCast2D" parent="."]
+
+enabled = true
+cast_to = Vector2( 0, -35 )
+layer_mask = 1
+type_mask = 15
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Label" type="Label" parent="."]
+
+visibility/opacity = 0.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 34.0
+margin/top = -62.0
+margin/right = 93.0
+margin/bottom = -48.0
+text = "Charge!!!!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+__meta__ = { "_edit_group_":true }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Base = SubResource( 3 )
-anims/Epic = SubResource( 5 )
-anims/Idle = SubResource( 4 )
-anims/Run = SubResource( 6 )
-anims/charge_end = SubResource( 8 )
-anims/charge_loop = SubResource( 11 )
-anims/to_charge = SubResource( 10 )
-next/charge_end = ""
-next/charge_loop = ""
-next/to_charge = ""
+anims/show = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

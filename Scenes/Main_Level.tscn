@@ -1,15 +1,12 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-<<<<<<< HEAD
 [ext_resource path="res://Scenes/Terrain_Shapes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://finish.gd" type="Script" id=3]
 [ext_resource path="res://Sound/epic_music.ogg" type="AudioStream" id=4]
->>>>>>> origin/master
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
-
-script/script = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 
@@ -26,43 +23,33 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="." groups=[ "player" ] instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 161.317, 90.8829 )
+transform/pos = Vector2( 184.038, 97.6991 )
 
-[node name="ChargeText 2" parent="Player" instance=ExtResource( 2 )]
-
-editor/display_folded = false
-transform/pos = Vector2( 2.36093, 19.3492 )
-
-[node name="Sprite" parent="Player/ChargeText 2"]
-
-visibility/opacity = 0.1
-transform/pos = Vector2( 0, -20 )
-transform/scale = Vector2( 1.33333, 1.16667 )
-
-[node name="Terrain" parent="." instance=ExtResource( 3 )]
+[node name="Terrain" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 252.2, 365.804 )
 transform/rot = 138.698
 
-[node name="Terrain1" parent="." instance=ExtResource( 3 )]
+[node name="Terrain1" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 563.474, 345.355 )
+transform/pos = Vector2( 954.27, 368.076 )
 transform/rot = 10.2509
 
-[node name="Terrain2" parent="." instance=ExtResource( 3 )]
+[node name="Terrain2" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 590.739, 422.606 )
 transform/rot = -23.3579
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 
-transform/pos = Vector2( 1115.59, -177.222 )
-enabled = false
+transform/pos = Vector2( 1154.22, -252.2 )
+enabled = true
 cast_to = Vector2( 0, 500 )
 layer_mask = 1
 type_mask = 15
+script/script = ExtResource( 3 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
@@ -75,5 +62,8 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
 
-[editable path="Player/ChargeText 2"]
+transform/pos = Vector2( 836.122, 329.45 )
+
+

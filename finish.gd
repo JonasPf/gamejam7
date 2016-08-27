@@ -5,5 +5,6 @@ func _ready():
 	
 func _fixed_process(delta):
 	if is_colliding():
-		get_tree().change_scene("res://Scenes/Intro.tscn")
+		if get_collider().is_in_group("player"):
+			get_tree().change_scene("res://Scenes/Intro.tscn")
 
