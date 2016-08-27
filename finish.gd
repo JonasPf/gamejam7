@@ -10,5 +10,5 @@ func _ready():
 	
 func _fixed_process(delta):
 	if is_colliding():
-		get_tree().reload_current_scene()
+		get_tree().change_scene("res://Scenes/Intro.tscn")
 

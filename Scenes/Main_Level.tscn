@@ -32,8 +32,8 @@ transform/rot = 138.698
 
 [node name="Terrain1" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 911.101, 388.525 )
-transform/rot = 5.76941
+transform/pos = Vector2( 563.474, 345.355 )
+transform/rot = 10.2509
 
 [node name="Terrain2" parent="." instance=ExtResource( 2 )]
 
