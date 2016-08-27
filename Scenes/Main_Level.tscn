@@ -24,9 +24,27 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 161.317, 90.8829 )
 
-[node name="Node2D" parent="." instance=ExtResource( 2 )]
+[node name="Terrain" parent="." instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 252.2, 365.804 )
 transform/rot = 138.698
+
+[node name="Terrain1" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 911.101, 388.525 )
+transform/rot = 5.76941
+
+[node name="Terrain2" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 590.739, 422.606 )
+transform/rot = -23.3579
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( 1115.59, -177.222 )
+enabled = false
+cast_to = Vector2( 0, 500 )
+layer_mask = 1
+type_mask = 15
 
 
