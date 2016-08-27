@@ -1,4 +1,7 @@
-[gd_scene format=1]
+[gd_scene load_steps=3 format=1]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Terrain_Shapes.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,5 +19,14 @@ text = "MAIN LEVEL"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 161.317, 90.8829 )
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 252.2, 365.804 )
+transform/rot = 138.698
 
 

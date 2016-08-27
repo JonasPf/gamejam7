@@ -1,21 +1,15 @@
-
 extends RigidBody2D
 
-# member variables here, example:
-# var a=2
-# var b="textvar"
-var jump_force = -100
+const JUMP_FORCE = Vector2(0, -900)
+const INITIAL_FORCE = Vector2(100, 0)
+const NULL_VECTOR = Vector2(0, 0)
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
-	self.add_force(Vector2(0,0), Vector2(100, 0))
-	
+	self.add_force(NULL_VECTOR, INITIAL_FORCE)
 	set_fixed_process(true)
 	
 func _fixed_process(delta):
-	
 	if Input.is_action_pressed("jump"):
-		self.add_force(Vector2(0,0), Vector2(0, jump_force) * delta)
+		self.add_force(NULL_VECTOR, JUMP_FORCE * delta)
 
 

@@ -1,25 +1,25 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 32.0347, 32.1317 )
+extents = Vector2( 10, 10 )
 
-[node name="Player" type="Node2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
 
-[node name="Player_Rigid" type="RigidBody2D" parent="."]
-
+transform/pos = Vector2( 212.742, 62.0499 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/transform = Matrix32( 3.22071, 0, 0, 2.9547, 2.2765, -0.0736427 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 mode = 0
 mass = 1.0
-friction = 1.0
+friction = 0.0
 bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
@@ -32,13 +32,17 @@ velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+__meta__ = { "_edit_group_":true }
 
-[node name="Player_Sprite" type="Sprite" parent="Player_Rigid"]
+[node name="Sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player_Rigid"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
+transform/pos = Vector2( 2.2765, -0.0736427 )
+transform/scale = Vector2( 3.22071, 2.9547 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
