@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=1]
+[gd_scene load_steps=32 format=1]
 
 [ext_resource path="res://Assets/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Art/boar.png" type="Texture" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://Sound/russian_boar_shortsqueal.wav" type="Sample" id=15]
 [ext_resource path="res://Sound/russian_boar_squeal.wav" type="Sample" id=16]
 [ext_resource path="res://Art/GUI/title.png" type="Texture" id=17]
-[ext_resource path="res://Art/GUI/controls_instructions.png" type="Texture" id=18]
-[ext_resource path="res://Art/GUI/press_any_explain.png" type="Texture" id=19]
+[ext_resource path="res://Art/GUI/victory.png" type="Texture" id=18]
+[ext_resource path="res://Art/GUI/controls_instructions.png" type="Texture" id=19]
+[ext_resource path="res://Art/GUI/press_any_explain.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -971,20 +972,20 @@ autoplay = ""
 transform/pos = Vector2( 27.3984, -219.187 )
 texture = ExtResource( 17 )
 
-[node name="TextDead" type="Sprite" parent="."]
+[node name="TextVictory" type="Sprite" parent="."]
 
 visibility/visible = false
 transform/pos = Vector2( 27.3984, -219.187 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="TextTitle" type="Sprite" parent="."]
 
 transform/pos = Vector2( 38.2256, 197.893 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
 [node name="TextPressAny" type="Sprite" parent="."]
 
 transform/pos = Vector2( 45.628, -7.52527 )
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 
 
