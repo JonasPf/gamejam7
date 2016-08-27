@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://Assets/scripts/finish.gd" type="Script" id=1]
+
+[node name="Victory" type="RayCast2D"]
+
+transform/pos = Vector2( 1154.22, -252.2 )
+enabled = true
+cast_to = Vector2( 0, 500 )
+layer_mask = 1
+type_mask = 15
+script/script = ExtResource( 1 )
+
+
