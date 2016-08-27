@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=1]
+[gd_scene load_steps=30 format=1]
 
 [ext_resource path="res://Art/Terrain/seamles_stone.jpg" type="Texture" id=1]
 [ext_resource path="res://Art/Terrain/glow.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Art/Terrain/slope3.png" type="Texture" id=8]
 [ext_resource path="res://Art/Terrain/slope4.png" type="Texture" id=9]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=11]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -147,7 +148,7 @@ shadow/item_mask = 1
 transform/pos = Vector2( 1120.08, -58.234 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 __meta__ = { "_edit_group_":true }
 
@@ -187,7 +188,7 @@ light_mask = 1
 transform/pos = Vector2( 2904.59, -429.939 )
 frames = SubResource( 1 )
 animation = "default"
-frame = 1
+frame = 2
 playing = true
 __meta__ = { "_edit_group_":true }
 
@@ -268,7 +269,7 @@ trigger = false
 
 [node name="Slope1 2" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( -127.33, -366.242 )
+transform/pos = Vector2( 5251.6, 909.466 )
 input/pickable = false
 shapes/0/shape = SubResource( 7 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -339,7 +340,7 @@ trigger = false
 
 [node name="Slope20" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 866.988, 941.821 )
+transform/pos = Vector2( 5115.82, 1512.26 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -489,7 +490,8 @@ trigger = false
 
 [node name="Slope4" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 1324.05, -71.3607 )
+transform/pos = Vector2( 1302.61, -0.645485 )
+transform/rot = -21.3955
 input/pickable = false
 shapes/0/shape = SubResource( 14 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.9902, -0.663422 )
@@ -520,7 +522,7 @@ trigger = false
 
 [node name="Slope8" type="StaticBody2D" parent="Slopes"]
 
-transform/pos = Vector2( 1294.65, 2047.22 )
+transform/pos = Vector2( 5867.62, 1424.92 )
 transform/rot = 3.68622
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -871,8 +873,8 @@ trigger = false
 [node name="Slope19" type="StaticBody2D" parent="Slopes"]
 
 editor/display_folded = true
-transform/pos = Vector2( 4041.47, 1062.78 )
-transform/rot = 23.5179
+transform/pos = Vector2( 4278, 1322.07 )
+transform/rot = -4.25646
 transform/scale = Vector2( 1.88729, 1.58254 )
 input/pickable = false
 shapes/0/shape = SubResource( 3 )
@@ -1120,18 +1122,42 @@ trigger = false
 [node name="RigidBody2D" parent="." instance=ExtResource( 10 )]
 
 editor/display_folded = true
-transform/pos = Vector2( 281.135, 17.3445 )
+transform/pos = Vector2( 491.386, -44.8851 )
 mode = 3
 mass = 10.0
 velocity/linear = Vector2( 5, 0 )
 
-[node name="body" parent="RigidBody2D"]
-
-editor/display_folded = true
-
 [node name="CollisionShape2D" parent="RigidBody2D"]
 
 transform/pos = Vector2( 19.4445, 38.8141 )
+
+[node name="Enemy" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 1489.28, 300.777 )
+
+[node name="Enemy1" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 3022.36, 414.864 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 2593.1, 1006.05 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 3556.75, 1306.82 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 4459.08, 995.674 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 3539.23, 1846.15 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 4835.78, 1783.92 )
 
 
 [editable path="RigidBody2D"]
