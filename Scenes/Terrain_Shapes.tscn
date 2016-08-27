@@ -22,7 +22,7 @@ points = Vector2Array( 67.2242, 149.82, -64.1437, -13.4688, 40.2139, -56.4397, 1
 custom_solver_bias = 0.0
 points = Vector2Array( 210.869, -45.39, 214.553, 60.1954, 171.582, 94.5721, 40.2139, -56.4397, 99.1453, -82.2221, 151.938, -104.321, 193.681, -100.638 )
 
-[node name="Terrain1" type="Node2D"]
+[node name="Terrain1" type="Node2D" groups=[ "grounds" ]]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

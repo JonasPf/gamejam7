@@ -26,26 +26,18 @@ func _ready():
 	detect_left.add_exception(self)
 	detect_up.add_exception(self)
 
-func detect_game_over():
+func detect_collision():
 	if detect_right.is_colliding() || detect_left.is_colliding() || detect_up.is_colliding():
-		print("detect_right!")
-		get_tree().change_scene("res://Scenes/Intro.tscn")
+		var obj = detect_right.get_collider()
+		if obj.is_in_group("enemies"):
+			obj.set_hit()
+		elif obj.is_in_group("grounds"):
+			get_tree().change_scene("res://Scenes/Intro.tscn")
 
 func _fixed_process(delta):
 	set_axis_velocity(Vector2(velocity,0))
 
-	detect_game_over()
-
-	
-	var grounds = get_tree().get_nodes_in_group("grounds")
-	var enemies = get_tree().get_nodes_in_group("enemies")
-	
-	var on_ground = false
-	for c in get_colliding_bodies():
-		if c in grounds:
-			on_ground = true
-		elif c in enemies:
-			c.set_hit()
+	detect_collision()
 
 	if Input.is_action_pressed("charge"):
 		self.apply_impulse(NULL_VECTOR, NULL_VECTOR)
@@ -53,10 +45,4 @@ func _fixed_process(delta):
 	if feet.is_colliding():
 		if Input.is_action_pressed("jump"):
 			set_axis_velocity(Vector2(0,-jump_height))
-			self.apply_impulse(NULL_VECTOR, JUMP_FORCE * delta)
-
-
-	
-#	if Input.is_action_pressed("jump") and on_ground:
-#		self.apply_impulse(NULL_VECTOR, JUMP_FORCE * delta)
-#		get_node("SamplePlayer").play("boar_gruntqueal")
+			get_node("SamplePlayer").play("boar_gruntsqueal")
