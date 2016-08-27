@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=1]
 
-[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://Assets/scripts/player.gd" type="Script" id=1]
 [ext_resource path="res://Art/boar.png" type="Texture" id=2]
 [ext_resource path="res://Art/head.png" type="Texture" id=3]
 [ext_resource path="res://Art/body.png" type="Texture" id=4]
@@ -17,12 +17,12 @@
 [ext_resource path="res://Sound/russian_boar_shortsqueal.wav" type="Sample" id=15]
 [ext_resource path="res://Sound/russian_boar_squeal.wav" type="Sample" id=16]
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="SampleLibrary" id=13]
+[sub_resource type="SampleLibrary" id=2]
 
 samples/boar_grunt_grunt_gruunt = { "db":0.0, "pitch":1.0, "sample":ExtResource( 9 ) }
 samples/boar_gruntgrunt_oink_grunt = { "db":0.0, "pitch":1.0, "sample":ExtResource( 10 ) }
@@ -34,7 +34,7 @@ samples/goblin_longer_scream = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14
 samples/russian_boar_shortsqueal = { "db":0.0, "pitch":1.0, "sample":ExtResource( 15 ) }
 samples/russian_boar_squeal = { "db":0.0, "pitch":1.0, "sample":ExtResource( 16 ) }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=3]
 
 resource/name = "Base"
 length = 1.0
@@ -121,9 +121,8 @@ tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ -9.94053 ] }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "Base"
 length = 1.0
 loop = false
 step = 0.1
@@ -295,9 +294,8 @@ tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = { "times":FloatArray( 0, 0.5 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ -9.94053, -68.9431 ] }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Idle"
 length = 1.0
 loop = true
 step = 0.1
@@ -382,9 +380,8 @@ tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = { "times":FloatArray( 0 ), "transitions":FloatArray( 1 ), "update":0, "values":[ -9.94053 ] }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
-resource/name = "Run"
 length = 1.0
 loop = true
 step = 0.1
@@ -479,7 +476,6 @@ tracks/0/type = "value"
 tracks/0/path = NodePath(".:transform/pos")
 tracks/0/interp = 1
 tracks/0/imported = false
-
 tracks/0/keys = { "times":FloatArray( 0, 0.4, 0.8 ), "transitions":FloatArray( 1, 1, 1 ), "update":0, "values":[ Vector2( -0.317602, -1.58799 ), Vector2( -19.0825, 7.79446 ), Vector2( -10.5447, -16.3351 ) ] }
 tracks/1/type = "value"
 tracks/1/path = NodePath(".:transform/rot")
@@ -557,7 +553,7 @@ tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = { "times":FloatArray( 0, 0.1, 0.4, 0.6, 0.8 ), "transitions":FloatArray( 1, 1, 1, 1, 1 ), "update":0, "values":[ 23.7915, 3.86082, 111.917, 109.747, 128.559 ] }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=9]
 
 resource/name = "charge_loop"
 length = 1.0
@@ -734,7 +730,7 @@ tracks/15/keys = { "times":FloatArray( 0, 0.3, 1 ), "transitions":FloatArray( 1,
 [node name="RigidBody2D" type="RigidBody2D"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 12 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3.22071, 0, 0, 2.9547, 2.2765, -0.0736427 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -835,14 +831,14 @@ __meta__ = { "_edit_bone_":true }
 
 transform/pos = Vector2( 2.2765, -0.0736427 )
 transform/scale = Vector2( 3.22071, 2.9547 )
-shape = SubResource( 12 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="SamplePlayer" type="SamplePlayer" parent="."]
 
 config/polyphony = 1
-config/samples = SubResource( 13 )
+config/samples = SubResource( 2 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -925,7 +921,7 @@ __meta__ = { "_edit_group_":true }
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/show = SubResource( 14 )
+anims/show = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -936,12 +932,12 @@ autoplay = ""
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Base = SubResource( 3 )
+anims/Base = SubResource( 4 )
 anims/Epic = SubResource( 5 )
-anims/Idle = SubResource( 4 )
-anims/Run = SubResource( 6 )
+anims/Idle = SubResource( 6 )
+anims/Run = SubResource( 7 )
 anims/charge_end = SubResource( 8 )
-anims/charge_loop = SubResource( 11 )
+anims/charge_loop = SubResource( 9 )
 anims/to_charge = SubResource( 10 )
 next/charge_end = ""
 next/charge_loop = ""

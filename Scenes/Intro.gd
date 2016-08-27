@@ -11,5 +11,3 @@ func _ready():
 func _input(event):
 	if event.is_action_released("jump"):
 		get_tree().change_scene("res://Scenes/Main_Level.tscn")
-
-
