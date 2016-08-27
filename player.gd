@@ -17,6 +17,9 @@ func _fixed_process(delta):
 	if Input.is_action_pressed("jump") and not jumping:
 		self.apply_impulse(NULL_VECTOR, JUMP_FORCE * delta)
 		jumping = true
+	
+	if Input.is_action_pressed("charge"):
+		self.apply_impulse(NULL_VECTOR, NULL_VECTOR)
 
 	if get_colliding_bodies().size() > 0:
 		print("Collision")

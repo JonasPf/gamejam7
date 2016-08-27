@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Terrain_Shapes.tscn" type="PackedScene" id=2]
-[ext_resource path="res://ChargeText.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ChargeText.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Terrain_Shapes.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 
-script/source = "\nextends Node2D\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tset_process(true)\nfunc _process(delta):\n\tif (Input.is_action_pressed(\"ui_down\")):\n\t\tget_node(\"ChargeText\").is_visible()\n\t\tget_node(\"ChargeText/Sprite/AnimationPlayer\").play(\"playChargeText\")\n\n\n"
+script/source = "\nextends Node2D\n\n# member variables here, example:\n# var a=2\n# var b=\"textvar\"\n\nfunc _ready():\n\t# Called every time the node is added to the scene.\n\t# Initialization here\n\tset_process(true)\nfunc _process(delta):\n\tif (Input.is_action_pressed(\"charge\")):\n\t\tvar pos = get_node(\"Player/Sprite\").get_pos()\n\t\t#pos.x += 100\n\t\tget_node(\"Player/ChargeText 2\").set_pos(pos);\n\t\t#get_node(\"Player/ChargeText 2/Sprite\").is_visible();\n\t\tget_node(\"Player/ChargeText 2/Sprite/AnimationPlayer\").play(\"playChargeText\")\n\n\n"
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,17 +31,28 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 161.317, 90.8829 )
 
-[node name="Terrain" parent="." instance=ExtResource( 2 )]
+[node name="ChargeText 2" parent="Player" instance=ExtResource( 2 )]
+
+editor/display_folded = false
+transform/pos = Vector2( 2.36093, 19.3492 )
+
+[node name="Sprite" parent="Player/ChargeText 2"]
+
+visibility/opacity = 0.1
+transform/pos = Vector2( 0, -20 )
+transform/scale = Vector2( 1.33333, 1.16667 )
+
+[node name="Terrain" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 252.2, 365.804 )
 transform/rot = 138.698
 
-[node name="Terrain1" parent="." instance=ExtResource( 2 )]
+[node name="Terrain1" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 911.101, 388.525 )
 transform/rot = 5.76941
 
-[node name="Terrain2" parent="." instance=ExtResource( 2 )]
+[node name="Terrain2" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 590.739, 422.606 )
 transform/rot = -23.3579
@@ -54,17 +65,5 @@ cast_to = Vector2( 0, 500 )
 layer_mask = 1
 type_mask = 15
 
-[node name="ChargeText" parent="." instance=ExtResource( 3 )]
 
-editor/display_folded = false
-visibility/visible = false
-transform/pos = Vector2( 222.074, 79.5766 )
-
-[node name="Sprite" parent="ChargeText"]
-
-visibility/opacity = 1.0
-transform/pos = Vector2( 0, -10 )
-transform/scale = Vector2( 1.5, 1.25 )
-
-
-[editable path="ChargeText"]
+[editable path="Player/ChargeText 2"]
