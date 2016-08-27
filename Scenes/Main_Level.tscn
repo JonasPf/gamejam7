@@ -34,12 +34,12 @@ transform/pos = Vector2( 179.289, 105.848 )
 transform/pos = Vector2( 252.2, 365.804 )
 transform/rot = 157.928
 
-[node name="Terrain1" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
+[node name="Terrain1" parent="." groups=[ "ground", "group2" ] instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 1062.84, 315.432 )
 transform/rot = 10.2509
 
-[node name="Terrain2" parent="." groups=[ "group2", "ground" ] instance=ExtResource( 2 )]
+[node name="Terrain2" parent="." groups=[ "ground", "group2" ] instance=ExtResource( 2 )]
 
 transform/pos = Vector2( 682.034, 387.287 )
 transform/rot = -14.5339
