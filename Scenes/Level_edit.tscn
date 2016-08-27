@@ -38,7 +38,6 @@ transform/pos = Vector2( 445.074, -184.915 )
 [node name="torch" parent="Lights/Node2D"]
 
 transform/pos = Vector2( 37.5025, -34.533 )
-frame = 2
 
 [node name="Light2D" parent="Lights/Node2D/torch"]
 
