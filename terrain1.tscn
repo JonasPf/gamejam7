@@ -1,21 +1,16 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 8.83565, 17.6525, 130.13, 34.9541, 0, 30 )
+points = Vector2Array( 21.3376, 11.5514, 130.13, 34.9541, 0, 30 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 8.83565, 17.6525, 0, 30, 0, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 0, 0, 8.83565, 17.6525, 0, 0 )
+points = Vector2Array( 0, 30, -55.2736, -19.5801, 18.5001, -14.5122, 21.3376, 11.5514 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
 
@@ -27,9 +22,6 @@ shapes/0/trigger = false
 shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 3.20298, 0, 0, 3.13828, -9.30046, -61.5454 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 3 )
-shapes/2/transform = Matrix32( 3.20298, 0, 0, 3.13828, -9.30046, -61.5454 )
-shapes/2/trigger = false
 collision/layers = 1
 collision/mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
@@ -47,8 +39,8 @@ texture = ExtResource( 1 )
 transform/pos = Vector2( -9.30046, -61.5454 )
 transform/scale = Vector2( 3.20298, 3.13828 )
 build_mode = 0
-polygon = Vector2Array( 8.83565, 17.6525, 130.13, 34.9541, 0, 30, 0, 0, 0, 0 )
-shape_range = Vector2( 0, 2 )
+polygon = Vector2Array( 21.3376, 11.5514, 130.13, 34.9541, 0, 30, -55.2736, -19.5801, 18.5001, -14.5122 )
+shape_range = Vector2( 0, 1 )
 trigger = false
 
 

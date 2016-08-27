@@ -9,4 +9,6 @@
 
 [node name="RigidBody2D" parent="." instance=ExtResource( 2 )]
 
+transform/pos = Vector2( 51.4248, -3.84021 )
+
 
