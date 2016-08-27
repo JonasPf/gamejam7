@@ -12,11 +12,12 @@ var detect_right
 var detect_left
 var detect_up
 var charging = false
+var started = false
 
 func _ready():
 #	self.add_force(NULL_VECTOR, INITIAL_FORCE)
 	set_fixed_process(true)
-	get_node("SamplePlayer").play("goblin_battlecry")
+	set_process_input(true)
 	
 	feet = get_node('Feet')
 	detect_right = get_node('Right')
@@ -27,9 +28,27 @@ func _ready():
 	detect_left.add_exception(self)
 	detect_up.add_exception(self)
 
+	get_node("Player_Anim").play("Idle")
+
+func _input(event):
+	if not started:
+		intro()
+
+func intro():
+	started = true
+	get_node("Scene_Anim").play("Start")
+	get_node("TextControls").hide()
+	get_node("TextPressAny").hide()
+	get_node("TextTitle").hide()
+
+func start_game():
+	set_mode(MODE_RIGID)
+	get_node("SamplePlayer").play("goblin_battlecry")
+
 func detect_collision():
 	if detect_right.is_colliding() || detect_left.is_colliding() || detect_up.is_colliding():
 		var obj = detect_right.get_collider()
+		
 		if obj.is_in_group("enemies"):
 			if charging:
 				obj.set_hit()
@@ -39,7 +58,8 @@ func detect_collision():
 			die()
 
 func die():
-	get_tree().change_scene("res://Scenes/Intro.tscn")
+	get_tree().reload_current_scene()
+#		get_tree().change_scene("res://Scenes/Intro.tscn")
 
 func start_charge():
 	charging = true
