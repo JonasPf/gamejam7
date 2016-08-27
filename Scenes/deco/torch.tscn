@@ -37,7 +37,7 @@ tracks/2/keys = { "times":FloatArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8,
 
 frames = SubResource( 1 )
 animation = "default"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Light2D" type="Light2D" parent="torch"]
@@ -48,7 +48,7 @@ enabled = true
 texture = ExtResource( 4 )
 offset = Vector2( 0, 0 )
 scale = 1.0
-color = Color( 0.391252, 0.391252, 0.391252, 1 )
+color = Color( 0.503088, 0.503088, 0.503088, 1 )
 energy = 1.0
 mode = 0
 range/height = 0.0
