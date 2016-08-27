@@ -6,6 +6,7 @@ const NULL_VECTOR = Vector2(0, 0)
 
 var player
 var feet
+var velocity_increase = 10
 var jump_height = 600
 var velocity = 350
 var detect_right
@@ -68,6 +69,7 @@ func detect_collision():
 		if obj.is_in_group("enemies"):
 			if charging:
 				obj.set_hit()
+				velocity += velocity_increase
 			else:
 				die()
 		elif obj.is_in_group("grounds"):
