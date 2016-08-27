@@ -83,6 +83,7 @@ func die():
 
 func start_charge():
 	charging = true
+	start_charging = false
 	get_node("SpeechBubble").show()
 
 func stop_charge():
