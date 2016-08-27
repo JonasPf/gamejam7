@@ -9,13 +9,18 @@ var jumping = true
 func _ready():
 	self.add_force(NULL_VECTOR, INITIAL_FORCE)
 	set_fixed_process(true)
-	
-func _integrate_forces(state):
-	pass
+<<<<<<< HEAD
+
+	get_node("SamplePlayer").play("goblin_battlecry")
+
+func _fixed_process(delta):
+	var on_ground = get_colliding_bodies().size() > 0
+>>>>>>> origin/master
 	
 func _fixed_process(delta):
 	if Input.is_action_pressed("jump") and not jumping:
 		self.apply_impulse(NULL_VECTOR, JUMP_FORCE * delta)
+<<<<<<< HEAD
 		jumping = true
 	
 	if Input.is_action_pressed("charge"):
@@ -25,4 +30,5 @@ func _fixed_process(delta):
 		print("Collision")
 		jumping = false
 	
-
+	get_node("SamplePlayer").play("boar_gruntsqueal")
+>>>>>>> origin/master
