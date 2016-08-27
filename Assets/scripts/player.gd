@@ -31,7 +31,7 @@ func _ready():
 	get_node("Player_Anim").play("Idle")
 
 func _input(event):
-	if not started:
+	if not started and event.type == InputEvent.KEY:
 		intro()
 
 func intro():
