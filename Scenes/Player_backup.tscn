@@ -645,8 +645,8 @@ tracks/15/keys = { "times":FloatArray( 0, 0.3, 1 ), "transitions":FloatArray( 1,
 
 [node name="RigidBody2D" type="RigidBody2D"]
 
-transform/pos = Vector2( -2.36353, -4.53814 )
-transform/rot = 11.5415
+transform/pos = Vector2( -11.7411, -12.9539 )
+transform/rot = 24.4057
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3.22071, 0, 0, 2.9547, 2.2765, -0.0736427 )
@@ -680,8 +680,8 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="head" type="Sprite" parent="body"]
 
-transform/pos = Vector2( 59.4822, -104.923 )
-transform/rot = 22.1505
+transform/pos = Vector2( 61.5395, -102.385 )
+transform/rot = 32.6801
 transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 offset = Vector2( 26.9638, 18.7965 )
@@ -695,15 +695,15 @@ __meta__ = { "_edit_bone_":true }
 
 [node name="goblin_body" type="Sprite" parent="body"]
 
-transform/pos = Vector2( 3.72083, -121.806 )
-transform/rot = -35.5522
+transform/pos = Vector2( -4.44685, -122.717 )
+transform/rot = -77.627
 texture = ExtResource( 4 )
 offset = Vector2( -15.4879, -53.1344 )
 
 [node name="upper_arm" type="Sprite" parent="body/goblin_body"]
 
 transform/pos = Vector2( -21.9843, -42.7067 )
-transform/rot = 44.7501
+transform/rot = 123.287
 texture = ExtResource( 5 )
 offset = Vector2( -6.94308, 5.91048 )
 __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
@@ -711,7 +711,7 @@ __meta__ = { "_edit_bone_":true, "_edit_ik_":true }
 [node name="weapon" type="Sprite" parent="body/goblin_body/upper_arm"]
 
 transform/pos = Vector2( -13.6364, 15.035 )
-transform/rot = -29.8283
+transform/rot = -59.678
 transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( 44.9035, 5.89621 )
@@ -725,7 +725,7 @@ __meta__ = { "_edit_bone_":true }
 [node name="leg_back" type="Sprite" parent="body"]
 
 transform/pos = Vector2( -51.5983, -60.2287 )
-transform/rot = -34.1424
+transform/rot = -4.12111
 texture = ExtResource( 7 )
 offset = Vector2( 5.00777, 25.5884 )
 __meta__ = { "_edit_bone_":true }
@@ -738,7 +738,7 @@ __meta__ = { "_edit_bone_":true }
 [node name="leg_front" type="Sprite" parent="body"]
 
 transform/pos = Vector2( 42.7862, -58.936 )
-transform/rot = 42.625
+transform/rot = 44.0757
 texture = ExtResource( 8 )
 offset = Vector2( 1.4886, 28.5537 )
 __meta__ = { "_edit_bone_":true, "_edit_group_":true }
