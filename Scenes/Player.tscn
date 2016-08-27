@@ -67,6 +67,7 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
+<<<<<<< HEAD
 [node name="Camera2D" type="Camera2D" parent="."]
 
 anchor_mode = 1
@@ -103,4 +104,5 @@ default/reverb_room = 2
 default/reverb_send = 0.0
 default/chorus_send = 0.0
 
+>>>>>>> origin/master
 

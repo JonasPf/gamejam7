@@ -7,7 +7,7 @@ const NULL_VECTOR = Vector2(0, 0)
 func _ready():
 	self.add_force(NULL_VECTOR, INITIAL_FORCE)
 	set_fixed_process(true)
-	get_node("SamplePlayer").play("boar_gruntqueal")
+	get_node("SamplePlayer").play("goblin_battlecry")
 
 func _fixed_process(delta):
 	var grounds = get_tree().get_nodes_in_group("grounds")
@@ -19,6 +19,11 @@ func _fixed_process(delta):
 			on_ground = true
 		elif c in enemies:
 			c.set_hit()
+
+	if Input.is_action_pressed("charge"):
+		self.apply_impulse(NULL_VECTOR, NULL_VECTOR)
+
+
 	
 	if Input.is_action_pressed("jump") and on_ground:
 		self.apply_impulse(NULL_VECTOR, JUMP_FORCE * delta)
