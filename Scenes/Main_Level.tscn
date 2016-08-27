@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Terrain_Shapes.tscn" type="PackedScene" id=2]
 [ext_resource path="res://finish.gd" type="Script" id=3]
+[ext_resource path="res://Sound/epic_music.ogg" type="AudioStream" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -48,5 +49,16 @@ cast_to = Vector2( 0, 500 )
 layer_mask = 1
 type_mask = 15
 script/script = ExtResource( 3 )
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 4 )
+stream/play = false
+stream/loop = true
+stream/volume_db = -20.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 
