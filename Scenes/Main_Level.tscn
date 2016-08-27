@@ -25,7 +25,7 @@ max_lines_visible = -1
 
 [node name="Player" parent="." groups=[ "player" ] instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 184.038, 97.6991 )
+transform/pos = Vector2( 265.833, -113.604 )
 
 [node name="Terrain" parent="." groups=[ "ground" ] instance=ExtResource( 2 )]
 
