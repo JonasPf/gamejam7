@@ -31,7 +31,7 @@ func _ready():
 	get_node("Player_Anim").play("Idle")
 
 func _input(event):
-	if not started:
+	if not started and event.type == InputEvent.KEY:
 		intro()
 
 func intro():
@@ -48,6 +48,11 @@ func start_game():
 func detect_collision():
 	if detect_right.is_colliding() || detect_left.is_colliding() || detect_up.is_colliding():
 		var obj = detect_right.get_collider()
+		
+		if obj == null:
+			obj = detect_left.get_collider()
+		if obj == null:
+			obj = detect_up.get_collider()
 		
 		if obj.is_in_group("enemies"):
 			if charging:
